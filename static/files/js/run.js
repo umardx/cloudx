@@ -14,7 +14,7 @@ app.run(function ($rootScope, search, api, apiget, storage) {
     navigator.registerProtocolHandler(
       'magnet',
       document.location.origin + pn + 'api/magnet?m=%s',
-      'SimpleTorrent'
+      'Cloud X Torrent'
     );
   }
 

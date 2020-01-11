@@ -17,8 +17,6 @@ import (
 
 	"github.com/NYTimes/gziphandler"
 	"github.com/boypt/scraper"
-	"github.com/jpillora/cloud-torrent/engine"
-	ctstatic "github.com/jpillora/cloud-torrent/static"
 	"github.com/jpillora/cookieauth"
 	"github.com/jpillora/requestlog"
 	"github.com/jpillora/velox"
@@ -26,6 +24,8 @@ import (
 	"github.com/radovskyb/watcher"
 	"github.com/skratchdot/open-golang/open"
 	"github.com/spf13/viper"
+	"github.com/umardx/cloudx/engine"
+	ctstatic "github.com/umardx/cloudx/static"
 )
 
 const (
@@ -175,6 +175,7 @@ func (s *Server) Run(version string) error {
 
 	if s.Debug {
 		viper.Debug()
+		log.Printf("Effective Config: %#v", s.state.Config)
 	}
 
 	s.backgroundRoutines()
