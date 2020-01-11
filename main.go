@@ -5,21 +5,21 @@ import (
 	"log"
 	"os"
 
-	"github.com/jpillora/cloud-torrent/server"
 	"github.com/jpillora/opts"
+	"github.com/umardx/cloudx/server"
 )
 
 var VERSION = "0.0.0-src" //set with ldflags
 
 func main() {
 	s := server.Server{
-		Title: "SimpleTorrent",
-		Port:  3000,
+		Title: "Cloud X Torrent",
+		Port:  80,
 	}
 
 	o := opts.New(&s)
 	o.Version(VERSION)
-	o.Repo("https://github.com/boypt/simple-torrent")
+	o.Repo("https://github.com/umardx/cloudx")
 	o.PkgRepo()
 	o.SetLineWidth(96)
 	o.Parse()
@@ -28,7 +28,7 @@ func main() {
 		log.SetFlags(0)
 	}
 
-	log.Printf("############# SimpleTorrent ver[%s] #############\n", VERSION)
+	log.Printf("############# Cloud X Torrent ver[%s] #############\n", VERSION)
 	if err := s.Run(VERSION); err != nil {
 		if errors.Is(err, server.ErrDiskSpace) {
 			log.Println(err)

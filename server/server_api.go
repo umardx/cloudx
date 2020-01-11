@@ -16,8 +16,8 @@ import (
 	"github.com/anacrolix/torrent"
 	"github.com/anacrolix/torrent/metainfo"
 
-	"github.com/jpillora/cloud-torrent/engine"
-	ctstatic "github.com/jpillora/cloud-torrent/static"
+	"github.com/umardx/cloudx/engine"
+	ctstatic "github.com/umardx/cloudx/static"
 )
 
 var (

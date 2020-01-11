@@ -5,3 +5,4 @@ cloud-torrent*
 tmp/
 .vscode
 .torrent.bolt.db
+.rclone

@@ -36,7 +36,7 @@ app.controller("ConfigController", function ($scope, $rootScope, storage, api) {
     "UploadRate": "Upload speed limiter, Low(~50k/s), Medium(~500k/s) and High(~1500k/s) is accepted , Unlimited / 0 or empty result in unlimited rate, or a customed value eg: 850k/720kb/2.85MB. ",
     "DownloadRate": "Download speed limiter, Low(~50k/s), Medium(~500k/s) and High(~1500k/s) is accepted , Unlimited / 0 or empty result in unlimited rate, or a customed value eg: 850k/720kb/2.85MB. ",
     "DownloadDirectory": "The directory where downloaded file saves.",
-    "WatchDirectory": "The directory SimpleTorrent will watch and load the new added .torrent files",
+    "WatchDirectory": "The directory Cloud X Torrent will watch and load the new added .torrent files",
     "ProxyURL": "Proxy URL",
     "TrackerListURL": "A https URL to a trackers list, this option is design to retrive public trackers from github.com/ngosang/trackerslist. ",
     "AlwaysAddTrackers": "Whether add trackers even there are trackers specified in the torrent/magnet",
