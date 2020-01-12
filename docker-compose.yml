@@ -7,5 +7,5 @@ services:
             - './downloads:/downloads'
             - './torrents:/torrents'
             - './config:/etc/cloud-torrent'
-        image: boypt/cloud-torrent
+        image: umardx/cloudx:latest
         command: --auth username:password

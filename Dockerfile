@@ -17,6 +17,6 @@ RUN go build -ldflags "-s -w -X main.VERSION=$(git describe --tags)" -o /usr/loc
 # STEP 2 build a small image
 ############################
 FROM alpine
-COPY --from=builder /usr/local/bin/cloud-torrent /usr/local/bin/cloud-torrent
+COPY --from=builder /usr/local/bin/cloud-torrent /usr/local/bin/cloudx
 RUN apk update && apk add ca-certificates
-ENTRYPOINT ["cloud-torrent"]
+ENTRYPOINT ["cloudx"]
