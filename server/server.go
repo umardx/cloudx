@@ -60,9 +60,9 @@ type Server struct {
 	isPendingBoot  bool
 
 	//http handlers
-	files, static, rssh, rclone http.Handler
-	scraper                     *scraper.Handler
-	scraperh                    http.Handler
+	files, static, rssh http.Handler
+	scraper             *scraper.Handler
+	scraperh            http.Handler
 
 	//file watcher
 	watcher *watcher.Watcher

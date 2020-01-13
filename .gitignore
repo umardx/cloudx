@@ -3,6 +3,7 @@ downloads
 torrents
 cloud-torrent*
 tmp/
+.idea
 .vscode
 .torrent.bolt.db
 .rclone
