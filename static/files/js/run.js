@@ -115,6 +115,13 @@ app.run(function ($rootScope, search, api, apiget, storage) {
     $scope.err = null;
     $scope.info = null;
     switch (section) {
+      case "rclone":
+        $rootScope.omni.rclone = !$rootScope.omni.rclone;
+        apiget.rclone().success(function(data) {
+          $rootScope.alertErr(data);
+          $rootScope.omni.rclone = !$rootScope.omni.rclone;
+        });
+        break
       case "rss":
         $rootScope.omni.get_rss(false)
         break;
