@@ -84,6 +84,8 @@ func (s *Server) apiGET(w http.ResponseWriter, r *http.Request) error {
 	case "enginedebug":
 		w.Header().Set("Content-Type", "text/plain")
 		s.engine.WriteStauts(w)
+	case "rclone":
+		w.Write([]byte(s.rclone()))
 	default:
 		return errUnknowAct
 	}
