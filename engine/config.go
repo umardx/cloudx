@@ -61,7 +61,7 @@ func InitConf(specPath string) (*Config, error) {
 	viper.SetDefault("DownloadDirectory", "./downloads")
 	viper.SetDefault("WatchDirectory", "./torrents")
 	viper.SetDefault("EnableUpload", true)
-	viper.SetDefault("EnableSeeding", false)
+	viper.SetDefault("EnableSeeding", true)
 	viper.SetDefault("AutoStart", true)
 	viper.SetDefault("DoneCmd", "")
 	viper.SetDefault("SeedRatio", 0)

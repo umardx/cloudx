@@ -117,8 +117,8 @@ app.run(function ($rootScope, search, api, apiget, storage) {
     switch (section) {
       case "rclone":
         $rootScope.omni.rclone = !$rootScope.omni.rclone;
-        apiget.rclone().success(function(data) {
-          $rootScope.alertErr(data);
+        apiget.rclone().success(function(message) {
+          $scope.info = message;
           $rootScope.omni.rclone = !$rootScope.omni.rclone;
         });
         break
