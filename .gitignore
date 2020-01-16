@@ -6,4 +6,4 @@ tmp/
 .idea
 .vscode
 .torrent.bolt.db
-.rclone
+.rclone.sh
