@@ -13,6 +13,7 @@ app.controller("OmniController", function (
     provider: storage.tcProvider || "tpb"
   };
   //edit fields
+  $scope.rclone = false;
   $scope.edit = false;
   $scope.magnet = {
     trackers: [{ v: "" }]
