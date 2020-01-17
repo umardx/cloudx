@@ -1,0 +1,49 @@
+#!/bin/sh
+PIDFILE=./tmp/.rclone.pid
+RCLONE_STAT=./tmp/.rclone.stat
+RCLONE_DIR=~/.config/rclone
+
+mkdir -p ./tmp
+
+if [ ! -f $RCLONE_DIR/rclone.conf ]; then
+mkdir -p $RCLONE_DIR >/dev/null
+tee ~/.config/rclone/rclone.conf >/dev/null << EOF
+[drive]
+type = drive
+scope = drive
+token = {"access_token":"<ACCESS_TOKEN>","token_type":"Bearer","refresh_token":"<REFRESH_TOKEN>","expiry":"<EXPIRY>"}
+root_folder_id = <ROOT_FOLDER_ID>
+EOF
+fi
+
+set -x
+if [ -f $PIDFILE ]
+then
+  PID=$(cat $PIDFILE)
+  kill -0 $PID > /dev/null 2>&1
+  if [ $? -eq 0 ]
+  then
+    echo "Process already running" > $RCLONE_STAT
+    exit 1
+  else
+    ## Process not found assume not running
+    echo $$ > $PIDFILE
+    if [ $? -ne 0 ]
+    then
+      echo "Could not create PID file" > $RCLONE_STAT
+      exit 1
+    fi
+  fi
+else
+  echo $$ > $PIDFILE
+  if [ $? -ne 0 ]
+  then
+    echo "Could not create PID file" > $RCLONE_STAT
+    exit 1
+  fi
+fi
+
+echo "Rclone started" > $RCLONE_STAT
+sleep 5000
+rclone copy --exclude *.db ./downloads drive:/downloads
+rm $PIDFILE

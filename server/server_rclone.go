@@ -13,7 +13,7 @@ func (s *Server) rclone() string {
 	go cmd.Start()
 	time.Sleep(100 * time.Millisecond)
 
-	rcloneStat := "/tmp/.rclone.stat"
+	rcloneStat := "./tmp/.rclone.stat"
 	res := ""
 
 	if fileExists(rcloneStat) {
